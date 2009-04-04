@@ -1,8 +1,10 @@
 = chef_solo_os
 
 This repository is used to build a generic server via Chef Solo.
-You can then use the following repository to create accounts:
+You can then use the following repositories to create accounts, setup
+Apache +passenger, and your virtualhosts.
   http://github.com/retr0h/chef_solo_accounts/tree/master
+  http://github.com/retr0h/chef_solo_apache2/tree/master
 
 Chef Solo allows you to run Chef Cookbooks in the absence of a Chef Server.
 It does this by requiring that the complete cookbook be present on disk, which
