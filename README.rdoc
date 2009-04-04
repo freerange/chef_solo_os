@@ -1,4 +1,4 @@
-= chef_solo_web_with_passenger
+= chef_solo_os
 
 This repository is used to build a generic server via Chef Solo.
 You can then use the following repository to create accounts:
