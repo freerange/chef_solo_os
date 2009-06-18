@@ -6,6 +6,6 @@ include_recipe "packages::sshd"
 %w(bin sbin etc).each do |dir|
   directory "/opt/bitsugar/#{dir}" do
     recursive true
-    mode 755
+    mode 0755
   end
 end
