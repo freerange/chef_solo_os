@@ -31,7 +31,4 @@ Debian
 
 == TODO
 
-  * Still need to manually create your Apache virtualhosts.
-    May integrate with pool-party (http://github.com/foysavas/pool-party/tree/master)
   * Does not set the system's hostname and other miscellaneous items.
-  * Create chef-solo package for Apache 2 +Phusion Passenger setup.
