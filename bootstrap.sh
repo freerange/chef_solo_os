@@ -8,6 +8,7 @@ if [ -f "/etc/lsb-release" ]; then
   apt-get update && apt-get upgrade
   apt-get install ruby ruby1.8-dev rubygems libopenssl-ruby1.8 libsqlite3-ruby irb build-essential
   gem install rubygems-update && /var/lib/gems/1.8/bin/update_rubygems
+  rm /usr/bin/gem && ln -s /usr/bin/gem1.8 /usr/bin/gem
 
   ### bootstrap with chef.
   gem install chef ohai --source http://gems.opscode.com --source http://gems.rubyforge.org
