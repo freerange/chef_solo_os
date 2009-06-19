@@ -14,12 +14,12 @@ script "iptables_setup" do
   EOH
 end
 
-template "/etc/network/if-post-down.d/iptasave" do
+remote_file "/etc/network/if-post-down.d/iptasave" do
+  source "iptasave"
   mode 0700
-  source "iptasave.erb"
 end
 
-template "/etc/network/if-pre-up.d/iptaload" do
+remote_file "/etc/network/if-pre-up.d/iptaload" do
+  source "iptaload"
   mode 0700
-  source "iptaload.erb"
 end
