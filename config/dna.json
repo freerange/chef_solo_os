@@ -6,11 +6,11 @@
   "gems":[
     {
       "name":"rake",
-      "version":"0.8.4"
+      "version":"0.8.7"
     },
     {
       "name":"rack",
-      "version": "0.9.1"
+      "version": "1.0.0"
     },
     {
       "name":"geminstaller",

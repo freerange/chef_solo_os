@@ -25,9 +25,7 @@ Debian
 
 == Installation
 
-  * apt-get update && apt-get install git-core
-  * cd /tmp && git clone git://github.com/retr0h/chef_solo_os.git && cd /tmp/chef_solo_os
-  * ./bootstrap.sh
+  * wget http://gist.github.com/raw/132506/03e091849deb35405603c002a99c8f6af6d97ba3/gistfile1.txt -O - | sh
 
 == TODO
 
