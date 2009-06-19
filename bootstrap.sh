@@ -6,9 +6,9 @@ if [ -f "/etc/lsb-release" ]; then
 
   ### bootstrap rubygems.
   gem sources -a http://gems.rubyforge.org -a http://gems.github.com && \
-  gem install rubygems-update && /var/lib/gems/1.8/bin/update_rubygems && \
+  gem install rubygems-update --no-rdoc --no-ri && /var/lib/gems/1.8/bin/update_rubygems && \
   rm /usr/bin/gem && ln -s /usr/bin/gem1.8 /usr/bin/gem && \
-  gem install chef ohai --source http://gems.opscode.com --source http://gems.rubyforge.org
+  gem install chef ohai --no-rdoc --no-ri --source http://gems.opscode.com --source http://gems.rubyforge.org
 
   ### Run chef solo.
   chef-solo -l debug -c config/solo.rb -j config/dna.json
