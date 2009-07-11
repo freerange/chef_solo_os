@@ -1,7 +1,7 @@
 {
   "user":"root",
   "packages":[
-    "telnet", "screen", "curl", "wget", "zsh", "strace", "lsof", "logrotate", "sysstat", "host", "traceroute", "mtr", "whois", "libxml2"
+    "telnet", "screen", "curl", "wget", "zsh", "strace", "lsof", "logrotate", "sysstat", "host", "traceroute", "mtr", "whois", "libxml2", "libxml2-dev"
   ],
   "gems":[
     {
