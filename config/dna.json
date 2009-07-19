@@ -20,7 +20,7 @@
       "whois",
       "manpages",
       "man",
-      "deborphan",
+      "aptitude",
     // Common rubygems prerequisites.
       "libxslt-dev",
       "libxml2",
