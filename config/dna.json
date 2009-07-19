@@ -1,6 +1,9 @@
 {
   "user":"root",
   "packages":[
+    // Default locale.
+      "language-pack-en",
+      "localepurge",
     // SA tools.
       "telnet",
       "screen",
@@ -17,6 +20,7 @@
       "whois",
       "manpages",
       "man",
+      "deborphan",
     // Common rubygems prerequisites.
       "libxslt-dev",
       "libxml2",
