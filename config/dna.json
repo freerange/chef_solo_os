@@ -1,7 +1,27 @@
 {
   "user":"root",
   "packages":[
-    "telnet", "screen", "curl", "wget", "zsh", "strace", "lsof", "logrotate", "sysstat", "host", "traceroute", "mtr", "whois", "libxslt-dev", "libxml2", "libxml2-dev", "libcurl4-openssl-dev"
+    // SA tools.
+      "telnet",
+      "screen",
+      "curl",
+      "wget",
+      "zsh",
+      "strace",
+      "lsof",
+      "logrotate",
+      "sysstat",
+      "host",
+      "traceroute",
+      "mtr",
+      "whois",
+      "manpages",
+      "man",
+    // Common rubygems prerequisites.
+      "libxslt-dev",
+      "libxml2",
+      "libxml2-dev",
+      "libcurl4-openssl-dev"
   ],
   "gems":[
     {
@@ -17,5 +37,5 @@
       "version":"0.5.1"
     }
   ],
-  "recipes":["main"]
+  "recipes":["gems", "packages"]
 }
