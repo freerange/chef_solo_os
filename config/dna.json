@@ -20,7 +20,6 @@
       "whois",
       "manpages",
       "man",
-      "aptitude",
     // Common rubygems prerequisites.
       "libxslt-dev",
       "libxml2",
