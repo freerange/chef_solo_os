@@ -19,6 +19,7 @@
       "mtr",
       "whois",
       "manpages",
+      "netcat",
     // Common rubygems prerequisites.
       "libxslt1-dev",
       "libxml2",
