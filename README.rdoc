@@ -25,7 +25,7 @@ Debian
 
 == Installation
 
-  * wget http://gist.github.com/raw/132506/8c322c43e74d3f9b752603dc4003063868494689/gistfile1.txt -O - | sh
+  * wget http://gist.github.com/raw/132506/986dddee9b9c4c14e8de147abc17b95644684219/gistfile1.txt -O - | sh
 
 == TODO
 
