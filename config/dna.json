@@ -19,9 +19,8 @@
       "mtr",
       "whois",
       "manpages",
-      "man",
     // Common rubygems prerequisites.
-      "libxslt-dev",
+      "libxslt1-dev",
       "libxml2",
       "libxml2-dev",
       "libcurl4-openssl-dev"
