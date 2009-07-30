@@ -37,6 +37,10 @@
     {
       "name":"geminstaller",
       "version":"0.5.1"
+    },
+    {
+      "name":"octopi",
+      "version":"0.1.0"
     }
   ],
   "recipes":["gems", "packages"]
