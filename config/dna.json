@@ -3,7 +3,6 @@
   "packages":[
     // Default locale.
       "language-pack-en",
-      "localepurge",
     // SA tools.
       "telnet",
       "screen",
