@@ -43,5 +43,5 @@
       "version":"0.1.0"
     }
   ],
-  "recipes":["gems", "packages"]
+  "recipes":["gems", "packages", "scripts"]
 }
