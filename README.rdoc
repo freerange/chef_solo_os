@@ -30,7 +30,3 @@ Debian
 == TODO
 
   * Does not set the system's hostname and other miscellaneous items.
-  * Setup /etc/default/locale with proper locale information.
-  LANG="en_US.utf8"
-  LANGUAGE="en_US.utf8"
-  LC_ALL="en_US.utf8"
