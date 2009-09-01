@@ -23,3 +23,7 @@ remote_file "/etc/network/if-pre-up.d/iptaload" do
   source "iptaload"
   mode 0700
 end
+
+bash "iptables_save" do
+  code "/etc/network/if-post-down.d/iptasave"
+end
