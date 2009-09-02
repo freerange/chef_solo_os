@@ -3,7 +3,9 @@ directory "/usr/local/bin" do
   mode 0755
 end
 
-remote_file "/usr/local/bin/ghkey.rb" do
-  source "ghkey.rb"
-  mode 0755
+%w(ghkey hostname).each do |file|
+  remote_file "/usr/local/bin/#{file}.rb" do
+    source "#{file}.rb"
+    mode 0755
+  end
 end
