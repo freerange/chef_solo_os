@@ -4,6 +4,7 @@
     // Default locale.
       "language-pack-en",
     // SA tools.
+      "man-db",
       "tree",
       "htop",
       "ack",
