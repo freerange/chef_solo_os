@@ -1,22 +1,23 @@
 = chef_solo_os
 
-This repository is used to build a generic server via Chef Solo.
-You can then use the following repositories to create accounts, setup
-Apache +passenger, and your virtualhosts.
+This repository is used to build a generic server via Chef Solo.  You can then use the following
+repositories to further refine your deployments.
   http://github.com/retr0h/chef_solo_accounts/tree/master
   http://github.com/retr0h/chef_solo_apache2/tree/master
 
-Chef Solo allows you to run Chef Cookbooks in the absence of a Chef Server.
-It does this by requiring that the complete cookbook be present on disk, which
-it will fetch by getting a tarball from a remote URL.
+Chef Solo allows you to run Chef Cookbooks in the absence of a Chef Server.  It does this by requiring
+that the complete cookbook be present on disk, which it will fetch by getting a tarball from a remote URL.
 
 == Tested
 
 Ubuntu
-  8.10
-  8.10 x86 64-bit
   8.04 LTS
   8.04 LTS 64bit
+  8.10
+  8.10 x86 64-bit
+  9.04
+  9.04 64bit
+
 Debian
   4.0
   4.0 64bit
@@ -25,7 +26,10 @@ Debian
 
 == Installation
 
-  * wget http://gist.github.com/raw/132506/986dddee9b9c4c14e8de147abc17b95644684219/gistfile1.txt -O - | sh
+  On target:
+    $ uncomment the universe lines from /etc/apt/sources.list.
+    $ apt-get update && apt-get install wget
+    $ wget http://gist.github.com/raw/132506/986dddee9b9c4c14e8de147abc17b95644684219/gistfile1.txt -O - | sh
 
 == TODO
 
