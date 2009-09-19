@@ -4,6 +4,7 @@
     // Default locale.
       "language-pack-en",
     // SA tools.
+      "tree",
       "htop",
       "ack",
       "telnet",
