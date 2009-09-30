@@ -10,26 +10,21 @@ that the complete cookbook be present on disk, which it will fetch by getting a 
 
 == Tested
 
-Ubuntu
-  8.04 LTS
-  8.04 LTS 64bit
-  8.10
-  8.10 x86 64-bit
-  9.04
-  9.04 64bit
+Ubuntu 32 and 64-bit
+  8.04 LTS Hardy Heron
+  8.10 Intrepid Ibex
+  9.04 Jaunty Jackalop
 
-Debian
-  4.0
-  4.0 64bit
-  5.0
-  5.0 64bit
+Debian 32 and 64-bit
+  4.0 Etch
+  5.0 Lenny
 
 == Installation
 
   On target:
-    $ uncomment the universe lines from /etc/apt/sources.list.
     $ apt-get update && apt-get install wget
-    $ wget http://gist.github.com/raw/132506/986dddee9b9c4c14e8de147abc17b95644684219/gistfile1.txt -O - | sh
+    $ wget http://gist.github.com/raw/132506/f4f1a4f837d3a0a8a037e4907788d2af20ca3645/gistfile1.txt -O - | sh
+    $ /opt/local/bin/hostname.rb <SYSTEM HOSTNAME>
 
 == TODO
 
