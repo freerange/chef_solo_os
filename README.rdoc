@@ -22,8 +22,8 @@ Debian 32 and 64-bit
 == Installation
 
   On target:
-    $ apt-get update && apt-get install wget
-    $ wget http://gist.github.com/raw/132506/bc642ad7df6d0ced65605d759444f242f65ba2d0/gistfile1.txt -O - |sh
+    $ apt-get update && apt-get install curl -y
+    $ curl -s http://gist.github.com/raw/132506/773de57e69d7b31249173ea2fa3d38a8535f9b8a/gistfile1.txt | sh
     $ /opt/local/bin/hostname.rb <SYSTEM HOSTNAME>
 
 == TODO
