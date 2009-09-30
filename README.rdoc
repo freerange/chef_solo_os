@@ -23,7 +23,7 @@ Debian 32 and 64-bit
 
   On target:
     $ apt-get update && apt-get install wget
-    $ wget http://gist.github.com/raw/132506/f4f1a4f837d3a0a8a037e4907788d2af20ca3645/gistfile1.txt -O - | sh
+    $ wget http://gist.github.com/raw/132506/bc642ad7df6d0ced65605d759444f242f65ba2d0/gistfile1.txt -O - |sh
     $ /opt/local/bin/hostname.rb <SYSTEM HOSTNAME>
 
 == TODO
