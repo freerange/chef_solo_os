@@ -28,6 +28,7 @@
       "postfix",
       "syslog-ng",
       "denyhosts",
+      "collectd",
     // Common rubygems prerequisites.
       "libxslt1-dev",
       "libxml2",
