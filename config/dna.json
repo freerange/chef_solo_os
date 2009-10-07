@@ -14,6 +14,7 @@
       "wget",
       "zsh",
       "strace",
+      "ltrace",
       "lsof",
       "logrotate",
       "sysstat",
@@ -29,11 +30,15 @@
       "syslog-ng",
       "denyhosts",
       "collectd",
-    // Common rubygems prerequisites.
+    // Libraries.
+    // "libgoogle-perftools-dev",
+    // "libgoogle-perftools0",
+    // "libtcmalloc-minimal0",
       "libxslt1-dev",
       "libxml2",
       "libxml2-dev",
-      "libcurl4-openssl-dev"
+      "libcurl4-openssl-dev",
+      "librrd2-dev"
   ],
   "gems":[
     {
