@@ -37,7 +37,8 @@
       "libxslt1-dev",
       "libxml2",
       "libxml2-dev",
-      "libcurl4-openssl-dev"
+      "libcurl4-openssl-dev",
+      "ca-certificates"
   ],
   "gems":[
     {
