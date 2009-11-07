@@ -25,6 +25,7 @@
       "manpages",
       "netcat",
       "mailx",
+      "rsync",
     // Services.
       "postfix",
       "syslog-ng",
