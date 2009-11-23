@@ -14,6 +14,7 @@ Ubuntu 32 and 64-bit
   8.04 LTS Hardy Heron
   8.10 Intrepid Ibex
   9.04 Jaunty Jackalop
+  9.10 Karmic Koala
 
 Debian 32 and 64-bit
   4.0 Etch
