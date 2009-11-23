@@ -32,5 +32,10 @@ when 'ubuntu'
   end
   File.write('/etc/hostname', @hostname.chomp)
   File.write('/etc/hosts', hosts)
-  system("/etc/init.d/hostname.sh start")
+  case ohai[:platform_version]
+  when '9.10'
+    system("hostname -F /etc/hostname")
+  else
+    system("/etc/init.d/hostname.sh start")
+  end
 end
