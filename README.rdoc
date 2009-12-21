@@ -24,7 +24,7 @@ Debian 32 and 64-bit
 
   On target:
     $ apt-get update && apt-get install curl -y
-    $ curl -S http://gist.github.com/raw/132506/755496f8faca82702ae331a077db8784e45f3499/gistfile1.txt |sh
+    $ curl -S http://gist.github.com/raw/132506/66b419e71ef3b38a0460e1b2256909e1d16c5cf2/gistfile1.txt |sh
     $ /opt/local/bin/hostname.rb <SYSTEM HOSTNAME>
 
 == TODO
