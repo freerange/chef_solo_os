@@ -1,9 +1,6 @@
 = chef_solo_os
 
-This repository is used to build a generic server via Chef Solo.  You can then use the following
-repositories to further refine your deployments.
-  http://github.com/retr0h/chef_solo_accounts
-  http://github.com/retr0h/chef_solo_apache2
+This repository is used to build a generic server via Chef Solo.
 
 Chef Solo allows you to run Chef Cookbooks in the absence of a Chef Server.  It does this by requiring
 that the complete cookbook be present on disk, which it will fetch by getting a tarball from a remote URL.
@@ -24,8 +21,3 @@ Debian 32 and 64-bit
 
 $ curl -S http://github.com/freerange/chef_solo_os/raw/master/build.sh |sh
 $ /opt/local/bin/hostname.rb <SYSTEM HOSTNAME>
-
-== TODO
-
-  * Enable sysstat via /etc/default/sysstat
-  * Use runurl?

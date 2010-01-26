@@ -31,8 +31,9 @@ if [ -f "/etc/lsb-release" ]; then
   apt-get install -y git-core
 
   ### Install Ruby.
-  apt-get install -y ruby ruby1.8-dev rubygems libopenssl-ruby1.8 libsqlite3-ruby irb build-essential
-  apt-get install -y ruby ruby1.8-dev libopenssl-ruby1.8 rdoc ri irb build-essential wget ssl-cert
+  apt-get install -y ruby ruby1.8-dev libopenssl-ruby1.8 rdoc ri irb rubygems build-essential wget ssl-cert
+  ### Add Rubygems bin path to $PATH
+  export PATH=$PATH:/var/lib/gems/1.8/bin
 
   ### Add latest gem source.
   gem sources --add http://gemcutter.org
@@ -43,7 +44,7 @@ if [ -f "/etc/lsb-release" ]; then
 
   ### Install Chef
   gem install ohai chef json
-
+  
   ### Run chef solo.
   cd /tmp && git clone git://github.com/freerange/chef_solo_os.git && cd /tmp/chef_solo_os || exit 1
   chef-solo -l debug -c config/solo.rb -j config/dna.json
