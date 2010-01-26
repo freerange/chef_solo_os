@@ -46,7 +46,7 @@
     {"name":"rack", "version": "1.0.0"}
   ],
   "users":[
-    {"username":"deploy","homedir":"/var/www"}
+    {"username":"deploy","homedir":"/var/www","password_hash":"$1$Y5eYRGew$6RaPxxQTbHgg/TMuIgl7s1"}
   ],
   "recipes":["gems", "users", "packages", "scripts"]
 }

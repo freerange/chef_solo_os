@@ -47,7 +47,7 @@ if [ -f "/etc/lsb-release" ]; then
   
   ### Run chef solo.
   cd /tmp && git clone git://github.com/freerange/chef_solo_os.git && cd /tmp/chef_solo_os || exit 1
-  chef-solo -l debug -c config/solo.rb -j config/dna.json
+  rake solo
 else
   echo "[ERROR] OS unsupported."
 fi

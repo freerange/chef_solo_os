@@ -8,6 +8,7 @@ node[:users].each do |user|
     comment user[:username]
     home homedir
     shell shell
+    password user[:password_hash]
   end
 
   ##
