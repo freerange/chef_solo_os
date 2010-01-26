@@ -22,10 +22,8 @@ Debian 32 and 64-bit
 
 == Installation
 
-  On target:
-    $ apt-get update && apt-get install curl -y
-    $ curl -S http://gist.github.com/raw/132506/66b419e71ef3b38a0460e1b2256909e1d16c5cf2/gistfile1.txt |sh
-    $ /opt/local/bin/hostname.rb <SYSTEM HOSTNAME>
+$ curl -S http://github.com/freerange/chef_solo_os/raw/master/build.sh |sh
+$ /opt/local/bin/hostname.rb <SYSTEM HOSTNAME>
 
 == TODO
 
