@@ -58,8 +58,7 @@
   "users":[
     {
       "username":"deploy",
-      "homedir":"/var/www",
-      "skel":"deployrc"
+      "homedir":"/var/www"
     }
   ],
   "recipes":["gems", "users", "packages", "scripts"]

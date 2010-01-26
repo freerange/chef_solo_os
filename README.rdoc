@@ -19,5 +19,5 @@ Debian 32 and 64-bit
 
 == Installation
 
-$ curl -S http://github.com/freerange/chef_solo_os/raw/master/build.sh |sh
-$ /opt/local/bin/hostname.rb <SYSTEM HOSTNAME>
+  curl -S http://github.com/freerange/chef_solo_os/raw/master/build.sh |sh
+  /opt/local/bin/hostname.rb <SYSTEM HOSTNAME>
