@@ -53,10 +53,6 @@
     {
       "name":"geminstaller",
       "version":"0.5.3"
-    },
-    {
-      "name":"pony",
-      "version":"0.3"
     }
   ],
   "recipes":["gems", "packages", "scripts"]
