@@ -15,10 +15,6 @@ if [ -f "/etc/lsb-release" ]; then
     910) RELEASE="karmic" ;;
     *) echo "[ERROR] Release '${ISSUE}' not supported!" && exit ;;
   esac
-  
-  ### Update
-  apt-get update
-  apt-get install curl -y
 
   ### Enable universe sources.
   sed -i -e 's/#deb/deb/g' /etc/apt/sources.list
@@ -31,20 +27,22 @@ if [ -f "/etc/lsb-release" ]; then
   ### Upgrade all packages.
   apt-get upgrade -y --force-yes
 
-  ### Install Chef.
-  apt-get install -y ohai chef
-
   ### Install Git.
   apt-get install -y git-core
 
   ### Install Ruby.
   apt-get install -y ruby ruby1.8-dev rubygems libopenssl-ruby1.8 libsqlite3-ruby irb build-essential
+  apt-get install -y ruby ruby1.8-dev libopenssl-ruby1.8 rdoc ri irb build-essential wget ssl-cert
+
+  ### Add latest gem source.
+  gem sources --add http://gemcutter.org
+  gem sources --add http://gems.opscode.com
 
   ### No Docs.
   echo "gem: --no-user-install --no-rdoc --no-ri" > ${HOME}/.gemrc
 
-  ### Add latest gem source.
-  gem sources --add http://gemcutter.org
+  ### Install Chef
+  gem install ohai chef json
 
   ### Run chef solo.
   cd /tmp && git clone git://github.com/freerange/chef_solo_os.git && cd /tmp/chef_solo_os || exit 1
