@@ -42,24 +42,11 @@
       "ca-certificates"
   ],
   "gems":[
-    {
-      "name":"rake",
-      "version":"0.8.7"
-    },
-    {
-      "name":"rack",
-      "version": "1.0.0"
-    },
-    {
-      "name":"geminstaller",
-      "version":"0.5.3"
-    }
+    {"name":"rake", "version":"0.8.7"},
+    {"name":"rack", "version": "1.0.0"},
   ],
   "users":[
-    {
-      "username":"deploy",
-      "homedir":"/var/www"
-    }
+    {"username":"deploy","homedir":"/var/www"}
   ],
   "recipes":["gems", "users", "packages", "scripts"]
 }
