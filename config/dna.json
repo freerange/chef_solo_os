@@ -55,5 +55,12 @@
       "version":"0.5.3"
     }
   ],
-  "recipes":["gems", "packages", "scripts"]
+  "users":[
+    {
+      "username":"deploy",
+      "homedir":"/var/www",
+      "skel":"deployrc"
+    }
+  ],
+  "recipes":["gems", "users", "packages", "scripts"]
 }
