@@ -1,4 +1,3 @@
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 export SHELL="zsh"
 export EDITOR="/usr/bin/vi"
 export PAGER="/usr/bin/less"
@@ -10,6 +9,3 @@ umask 022
 bindkey -e
 
 precmd () {print -Pn "\e]0;%n@%m: %~\a"}
-
-### aliases
-alias root='su root -c "export HOME=$HOME; exec $SHELL"'
