@@ -1,0 +1,1 @@
+Sets up some environment stuff, like paths
