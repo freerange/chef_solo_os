@@ -1,1 +1,2 @@
+# REE should be available
 export PATH="/opt/ruby-enterprise/bin:$PATH"

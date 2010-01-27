@@ -37,12 +37,12 @@ node[:users].each do |user|
 
   ##
   # Setup shell and rc files.
-  remote = user[:skel] ? "#{shell.split(/\//)[-1]}rc" : "zshrc"
-  source = user[:skel] || "zshrc"
-  remote_file "#{homedir}/.#{remote}" do
-    source source
-    mode 0644
-    owner user[:username]
-    group user[:username]
+  %w(zshrc zshenv).each do |dotfile|
+    "#{homedir}/.#{dotfile}" do
+      source dotfile
+      mode 0644
+      owner user[:username]
+      group user[:username]
+    end
   end
 end
