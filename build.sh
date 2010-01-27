@@ -31,7 +31,7 @@ if [ -f "/etc/lsb-release" ]; then
   apt-get install -y git-core
 
   ### Install Ruby.
-  apt-get install -y ruby ruby1.8-dev libopenssl-ruby1.8 rdoc ri irb rubygems build-essential wget ssl-cert
+  apt-get install -y ruby ruby1.8-dev libopenssl-ruby1.8 rdoc irb rubygems build-essential wget ssl-cert
   ### Add Rubygems bin path to $PATH
   export PATH=$PATH:/var/lib/gems/1.8/bin
 
