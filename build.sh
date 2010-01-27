@@ -43,7 +43,7 @@ if [ -f "/etc/lsb-release" ]; then
   echo "gem: --no-user-install --no-rdoc --no-ri" > ${HOME}/.gemrc
 
   ### Install Chef
-  gem install ohai chef json
+  gem install ohai chef json rake
   
   ### Run chef solo.
   cd /tmp && git clone git://github.com/freerange/chef_solo_os.git && cd /tmp/chef_solo_os || exit 1
