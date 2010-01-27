@@ -21,7 +21,7 @@ if [ -f "/etc/lsb-release" ]; then
 
   ### Add opscode sources to apt-get.
   echo "deb http://apt.opscode.com/ ${RELEASE} universe" > /etc/apt/sources.list.d/opscode.list
-  curl http://apt.opscode.com/packages@opscode.com.gpg.key | apt-key add - || exit 1
+  wget -q -O - http://apt.opscode.com/packages@opscode.com.gpg.key | apt-key add - || exit 1
   apt-get update -y
 
   ### Upgrade all packages.
