@@ -1,5 +1,5 @@
 export SHELL="zsh"
-export EDITOR="/usr/bin/vi"
+export EDITOR="/usr/bin/vim"
 export PAGER="/usr/bin/less"
 export PS1='%n@%m:%~> '
 export PS2='> '
