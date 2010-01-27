@@ -52,5 +52,6 @@
     }
   },
   "apache": {"contact": "lets@gofreerange.com"},
+  "mysql": {"server_root_password": ""},
   "recipes":["packages", "ntp", "sshd", "iptables", "openssl", "mysql::server", "passenger_enterprise::apache2", "sudo", "zsh", "environment", "users"]
 }
