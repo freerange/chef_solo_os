@@ -38,7 +38,7 @@ node[:users].each do |user|
   ##
   # Setup shell and rc files.
   %w(zshrc zshenv).each do |dotfile|
-    "#{homedir}/.#{dotfile}" do
+    remote_file "#{homedir}/.#{dotfile}" do
       source dotfile
       mode 0644
       owner user[:username]
