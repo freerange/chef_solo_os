@@ -1,3 +1,5 @@
+group "admin"
+
 node[:users].each do |user|
   homedir = user[:homedir]
   shell   = user[:shell] || "/bin/zsh"
