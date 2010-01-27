@@ -1,3 +1,3 @@
 bash "sudo_user" do
-  code "usermod -G sudo -a deploy"
+  code "usermod -G admin -a deploy"
 end
