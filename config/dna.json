@@ -46,7 +46,7 @@
      "homedir":"/var/www",
      "password_hash":"$1$Y5eYRGew$6RaPxxQTbHgg/TMuIgl7s1"}
   ],
-  "authorisation": {
+  "authorization": {
     "sudo": {
       "groups": ["admin"]
     }
