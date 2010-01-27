@@ -51,5 +51,6 @@
       "groups": ["admin"]
     }
   },
+  "apache": {"contact": "lets@gofreerange.com"},
   "recipes":["packages", "ntp", "sshd", "iptables", "openssl", "mysql::server", "passenger_enterprise::apache2", "sudo", "zsh", "users"]
 }
