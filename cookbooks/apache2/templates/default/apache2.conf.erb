@@ -228,3 +228,6 @@ Include <%= @node[:apache][:dir] %>/conf.d/
 
 # Include the virtual host configurations:
 Include <%= @node[:apache][:dir] %>/sites-enabled/
+
+# Include virtual hosts from deployed apps:
+Include <%= @node[:deploy][:apache_vhost_directory] %>/
