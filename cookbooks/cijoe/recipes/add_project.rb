@@ -37,7 +37,9 @@ end
 template "#{ci_path}/vhosts/#{project_name}" do
   source "app.vhost"
   variables(:project_name => project_name, :ci_path => ci_path)
-  if File.exists?("#{ci_path}/vhosts/#{project_name}")
-    notifies :reload, resources(:service => "apache2"), :delayed
-  end
+end
+
+# reload apache2 config
+execute "Restart Apache2" do
+  command "/etc/init.d/apache2 reload"
 end
