@@ -6,9 +6,6 @@
 #
 # This cookbook adds a site
 
-# include for resource restarting
-include_recipe "apache2"
-
 git_url = ENV["GIT_URL"]
 project_name = ENV["PROJECT_NAME"]
 ci_path = node[:ci][:path]
