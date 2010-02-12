@@ -29,13 +29,13 @@ end
 
 # set up config.ru
 template "#{ci_path}#{project_name}/config.ru" do
-  source "config.ru"
+  source "config.ru.erb"
   variables(:project_name => project_name)
 end
 
 # append a new virtual host to app.vhost
 template "#{ci_path}/vhosts/#{project_name}" do
-  source "app.vhost"
+  source "app.vhost.erb"
   variables(:project_name => project_name, :ci_path => ci_path)
 end
 

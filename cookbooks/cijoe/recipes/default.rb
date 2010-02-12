@@ -25,7 +25,7 @@ end
 
 # copy across Site vhost template
 template "/etc/apache2/sites-available/#{hostname}" do
-  source "apache_site.vhost"
+  source "apache_site.vhost.erb"
   variables(
     :hostname => hostname,
     :ci_path => ci_path
@@ -61,7 +61,7 @@ end
 
 # setup default index page
 template "#{ci_path}index.html" do
-  source "index_path.html"
+  source "index_path.html.erb"
   variables(
     :hostname => hostname
   )
