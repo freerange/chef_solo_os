@@ -1,4 +1,5 @@
 {
+  "user":"root",
   "ci": {
     "path":"/var/www/ci"
   },

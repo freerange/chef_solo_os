@@ -6,6 +6,9 @@
 #
 # This cookbook installs CI
 
+# include for resource restarting
+include_recipe "apache2"
+
 # install cijoe gem into REE
 ree_gem 'cijoe', :source => "http://gemcutter.org"
 
@@ -27,6 +30,7 @@ template "/etc/apache2/sites-available/#{hostname}" do
     :hostname => hostname,
     :ci_path => ci_path
   )
+  action :create
 end
 
 # set up vhosts directory
@@ -39,7 +43,7 @@ end
 # enable CI site and restart apache
 execute "Enable CI apache vhost site" do
   command "/usr/sbin/a2enmod #{hostname}"
-  notifies :reload, resources(:service => "apache2")
+  service_name "apache2"
 end
 
 # setup HTTP Basic auth username and passwords
@@ -47,6 +51,7 @@ remote_file "#{ci_path}/auth.passwd" do
   source "auth.passwd"
   owner "www-data"
   group "www-data"
+  action :create
 end
 
 # setup default index page
@@ -57,4 +62,5 @@ template "#{ci_path}index.html" do
   )
   owner "www-data"
   group "www-data"
+  action :create
 end
