@@ -12,16 +12,15 @@ task :check_solo_setup do
   `gem install ohai chef json`
 end
 
-namespace :setup do
+namespace :ci do
+  
   desc "Run a custom chef-solo cookbook"
-  task :ci => :check_solo_setup do
+  task :setup => :check_solo_setup do
     puts "Please supply HOSTNAME=xxx for the hostname that this will be" unless ENV["HOSTNAME"]
     puts "Setting up this machine as a CI server at #{ENV["HOSTNAME"]}"
     sh "chef-solo -l debug -c config/solo.rb -j config/ci/dna.json"
   end
-end
-
-namespace :ci do
+  
   desc "Add CI project"
   task :add_project => :check_solo_setup do
     unless ENV["GIT_URL"] && ENV["PROJECT_NAME"]

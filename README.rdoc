@@ -27,9 +27,9 @@ To set up the server as a CI server, run the following rake on the server. This 
 
   cd /tmp/chef_solo_os
   
-  sudo rake setup:ci HOSTNAME="ci.mycompany.com"
+  sudo rake ci:setup HOSTNAME="ci.mycompany.com"
   
-Then to add an application you can run this rake task from the same direcory. (unless we do git push)
+Then to add an application you can run this rake task from the same directory.
 
   sudo rake ci:add_project GIT_URL="git@github.com:user/example_project.git" PROJECT_NAME=example_project
   
