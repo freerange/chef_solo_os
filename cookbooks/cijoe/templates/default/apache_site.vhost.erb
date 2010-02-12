@@ -1,13 +1,13 @@
 <VirtualHost *>
-  DocumentRoot <%= ci_path %>
-  ServerName <%= hostname %>
+  DocumentRoot <%= @ci_path %>
+  ServerName <%= @hostname %>
   
-  Include <%= ci_path %>/vhosts/*
+  Include <%= @ci_path %>/vhosts/*
   
   <Location "/">
     AuthType Basic
     AuthName "By Invitation Only"
-    AuthUserFile <%= ci_path %>auth.passwd
+    AuthUserFile <%= @ci_path %>auth.passwd
     Require valid-user
   </Location>
   
