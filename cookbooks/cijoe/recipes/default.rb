@@ -42,7 +42,7 @@ end
 
 # enable CI site and restart apache
 execute "Enable CI apache vhost site" do
-  command "/usr/sbin/a2enmod #{hostname}"
+  command "/usr/sbin/a2ensite #{hostname}"
   #notifies :reload, resources(:service => "apache2") # couldn't get working
 end
 
@@ -60,7 +60,7 @@ remote_file "#{ci_path}/auth.passwd" do
 end
 
 # setup default index page
-template "#{ci_path}index.html" do
+template "#{ci_path}/index.html" do
   source "index_path.html.erb"
   variables(
     :hostname => hostname

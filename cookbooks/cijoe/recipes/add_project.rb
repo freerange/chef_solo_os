@@ -15,11 +15,11 @@ ci_path = node[:ci][:path]
 
 # clone the GIT repos into required location
 execute "clone the repository into require project location" do
-  command "git clone #{git_url} #{ci_path}#{project_name}/app"
+  command "git clone #{git_url} #{ci_path}/#{project_name}/app"
 end
 
 # setup potentially required passenger directories
-["#{ci_path}#{project_name}/public", "#{ci_path}#{project_name}/tmp"].each do |dir|
+["#{ci_path}#{project_name}/public", "#{ci_path}/#{project_name}/tmp"].each do |dir|
   directory dir do
     action :create
     owner "www-data"
@@ -28,7 +28,7 @@ end
 end
 
 # set up config.ru
-template "#{ci_path}#{project_name}/config.ru" do
+template "#{ci_path}/#{project_name}/config.ru" do
   source "config.ru.erb"
   variables(:project_name => project_name)
 end
