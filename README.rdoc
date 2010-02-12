@@ -20,3 +20,19 @@ Debian 32 and 64-bit
 == Installation
 
   wget -q -O - http://github.com/freerange/chef_solo_os/raw/master/build.sh | sh
+  
+  
+== Setting up server as CI
+To set up the server as a CI server, run the following rake on the server. This will run the required chef recipes and apache setup.
+
+  cd /tmp/chef_solo_os
+  
+  sudo rake setup:ci HOSTNAME="ci.gofreerange.com"
+  
+Then to add an application you can run this rake task from the same direcory. (unless we do git push)
+
+  sudo rake ci:add_project GIT_URL="git@github.com:user/example_project.git" PROJECT_NAME=example_project
+  
+Once an application is added you will be able to access it via:
+
+  http://#{HOSTNAME}/example_project

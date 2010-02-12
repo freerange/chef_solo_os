@@ -1,0 +1,6 @@
+{
+  "ci": {
+    "path":"/var/www/ci"
+  },
+  "recipes":["cijoe"]
+}

@@ -1,0 +1,14 @@
+# CI Joe file for app
+require 'cijoe'
+
+# setup middleware
+use Rack::CommonLogger
+
+# configure joe
+CIJoe::Server.configure do |config|
+  config.set :project_path, "/var/www/ci/<%= project_name %>/app"
+  config.set :show_exceptions, true
+  config.set :lock, true
+end
+
+run CIJoe::Server
