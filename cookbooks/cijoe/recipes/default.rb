@@ -61,7 +61,7 @@ end
 
 # setup default index page
 template "#{ci_path}/index.html" do
-  source "index_path.html.erb"
+  source "index_page.html.erb"
   variables(
     :hostname => hostname
   )

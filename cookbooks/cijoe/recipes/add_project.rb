@@ -19,7 +19,7 @@ execute "clone the repository into require project location" do
 end
 
 # setup potentially required passenger directories
-["#{ci_path}#{project_name}/public", "#{ci_path}/#{project_name}/tmp"].each do |dir|
+["#{ci_path}/#{project_name}/public", "#{ci_path}/#{project_name}/tmp"].each do |dir|
   directory dir do
     action :create
     owner "www-data"
@@ -33,7 +33,7 @@ template "#{ci_path}/#{project_name}/config.ru" do
   variables(:project_name => project_name)
 end
 
-# append a new virtual host to app.vhost
+# add a new vhost for the project
 template "#{ci_path}/vhosts/#{project_name}" do
   source "app.vhost.erb"
   variables(:project_name => project_name, :ci_path => ci_path)
