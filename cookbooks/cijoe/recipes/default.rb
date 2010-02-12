@@ -13,6 +13,13 @@ ree_gem 'cijoe', :source => "http://gemcutter.org"
 ci_path = node[:ci][:path]
 hostname = ENV["HOSTNAME"].downcase
 
+# set up CI Path location
+directory ci_path do
+  owner "www-data"
+  group "www-data"
+  action :create
+end
+
 # copy across Site vhost template
 template "/etc/apache2/sites-available/#{hostname}" do
   source "apache_site_vhost"

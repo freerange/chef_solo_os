@@ -27,7 +27,7 @@ To set up the server as a CI server, run the following rake on the server. This 
 
   cd /tmp/chef_solo_os
   
-  sudo rake setup:ci HOSTNAME="ci.gofreerange.com"
+  sudo rake setup:ci HOSTNAME="ci.mycompany.com"
   
 Then to add an application you can run this rake task from the same direcory. (unless we do git push)
 

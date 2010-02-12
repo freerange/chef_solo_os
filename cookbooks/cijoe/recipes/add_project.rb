@@ -27,13 +27,13 @@ end
 # set up config.ru
 template "#{ci_path}#{project_name}/config.ru" do
   source "config.ru"
-  variables (:project_name => project_name)
+  variables(:project_name => project_name)
 end
 
 # append a new virtual host to app.vhost
 template "#{ci_path}/vhosts/#{project_name}" do
   source "app.vhost"
-  variables (:project_name => project_name, :ci_path => ci_path)
+  variables(:project_name => project_name, :ci_path => ci_path)
   if File.exists?("#{ci_path}/vhosts/#{project_name}")
     notifies :reload, resources(:service => "apache2"), :delayed
   end

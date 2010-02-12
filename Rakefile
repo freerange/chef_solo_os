@@ -7,7 +7,7 @@ task :solo do
 end
 
 desc "Check that solo is setup and configured correctly"
-task :check_setup_solo do
+task :check_solo_setup do
   # TODO: need to check first... As the initial install script was ran from Ruby 1.8 std and now server is configure with REE.
   `gem install ohai chef json`
 end
