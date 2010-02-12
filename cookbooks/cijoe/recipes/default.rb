@@ -43,7 +43,7 @@ end
 # enable CI site and restart apache
 execute "Enable CI apache vhost site" do
   command "/usr/sbin/a2enmod #{hostname}"
-  service_name "apache2"
+  notifies :reload, resources(:service => "apache2")
 end
 
 # setup HTTP Basic auth username and passwords
