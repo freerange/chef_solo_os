@@ -1,4 +1,8 @@
-desc "Rake's default task."
+require 'rubygems'
+require 'chef'
+
+load 'chef/tasks/chef_repo.rake'
+
 task :default => :test
 
 desc "Run chef-solo cookbook(s)."
@@ -42,3 +46,12 @@ task :test do
     end
   end
 end
+
+# SSL certificate generation config
+CADIR = File.join(File.dirname(__FILE__), "certificates")
+COMPANY_NAME = "Go Free Range Limited"
+SSL_COUNTRY_NAME = "UK"
+SSL_STATE_NAME = ""
+SSL_LOCALITY_NAME = "London"
+SSL_ORGANIZATIONAL_UNIT_NAME = ""
+SSL_EMAIL_ADDRESS = "lets@gofreerange.com"
