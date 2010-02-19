@@ -34,6 +34,7 @@ if [ -f "/etc/lsb-release" ]; then
   apt-get install -y ruby ruby1.8-dev libopenssl-ruby1.8 rdoc irb rubygems build-essential wget ssl-cert libshadow-ruby1.8
   ### Add Rubygems bin path to $PATH
   export PATH=$PATH:/var/lib/gems/1.8/bin
+  echo "export PATH=$PATH:/var/lib/gems/1.8/bin" >> ${HOME}.bashrc
 
   ### Add latest gem source.
   gem sources --add http://gemcutter.org
@@ -46,7 +47,7 @@ if [ -f "/etc/lsb-release" ]; then
   gem install ohai chef json rake
   
   ### Run chef solo.
-  cd /tmp && git clone git://github.com/freerange/chef_solo_os.git && cd /tmp/chef_solo_os || exit 1
+  git clone git://github.com/freerange/chef_solo_os.git && cd chef_solo_os || exit 1
   rake solo
 else
   echo "[ERROR] OS unsupported."
