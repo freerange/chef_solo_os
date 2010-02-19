@@ -7,7 +7,7 @@ task :default => :test
 
 desc "Run chef-solo cookbook(s)."
 task :solo do
-  sh "chef-solo -l debug -c config/solo.rb -j config/dna.json"
+  sh "chef-solo -l #{ENV["DEBUG"] ? "debug" : "info"} -c config/solo.rb -j config/dna.json"
 end
 
 desc "Check that solo is setup and configured correctly"
