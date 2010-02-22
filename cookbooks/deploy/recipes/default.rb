@@ -3,5 +3,3 @@ directory @node["deploy"]["apache_vhost_directory"] do
   owner "deploy"
   group "admin"
 end
-
-ree_gem "bundler", :version => ">= 0.9.7"
