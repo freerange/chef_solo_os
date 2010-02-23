@@ -16,14 +16,14 @@ execute "clone the repository into require project location" do
 end
 
 execute "update permissions so CI can run the build" do
-  command "chown -R www-data: #{ci_path}/projects/#{project_name}/app"
+  command "chown -R deploy:www-data #{ci_path}/projects/#{project_name}/app"
 end
 
 # setup potentially required passenger directories
 ["#{ci_path}/projects/#{project_name}/public", "#{ci_path}/projects/#{project_name}/tmp"].each do |dir|
   directory dir do
     action :create
-    owner "www-data"
+    owner "deploy"
     group "www-data"
   end
 end
@@ -32,7 +32,7 @@ end
 template "#{ci_path}/projects/#{project_name}/config.ru" do
   source "config.ru.erb"
   variables(:project_name => project_name)
-  owner "www-data"
+  owner "deploy"
   group "www-data"
 end
 
@@ -40,7 +40,7 @@ end
 template "#{ci_path}/vhosts/#{project_name}" do
   source "app.vhost.erb"
   variables(:project_name => project_name, :ci_path => ci_path)
-  owner "www-data"
+  owner "deploy"
   group "www-data"
 end
 
