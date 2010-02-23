@@ -16,7 +16,7 @@ execute "clone the repository into require project location" do
 end
 
 # setup potentially required passenger directories
-["#{ci_path}/#{project_name}/public", "#{ci_path}/projects/#{project_name}/tmp"].each do |dir|
+["#{ci_path}/projects/#{project_name}/public", "#{ci_path}/projects/#{project_name}/tmp"].each do |dir|
   directory dir do
     action :create
     owner "www-data"
