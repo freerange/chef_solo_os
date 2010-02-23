@@ -32,6 +32,7 @@ if [ -f "/etc/lsb-release" ]; then
 
   ### Install Ruby.
   apt-get install -y ruby ruby1.8-dev libopenssl-ruby1.8 rdoc irb rubygems build-essential wget ssl-cert libshadow-ruby1.8
+
   ### Add Rubygems bin path to $PATH
   export PATH=$PATH:/var/lib/gems/1.8/bin
   echo "export PATH=$PATH:/var/lib/gems/1.8/bin" >> ${HOME}.bashrc
@@ -45,10 +46,13 @@ if [ -f "/etc/lsb-release" ]; then
 
   ### Install Chef
   gem install ohai chef json rake
-  
+
   ### Run chef solo.
   git clone git://github.com/freerange/chef_solo_os.git && cd chef_solo_os || exit 1
   rake solo
+
+  ### Add Ruby Enterprise to root path
+  echo "export PATH=/opt/ruby-enterprise/bin:$PATH" >> /root/.bashrc
 else
   echo "[ERROR] OS unsupported."
 fi
