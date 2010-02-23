@@ -4,6 +4,16 @@ require 'cijoe'
 # setup middleware
 use Rack::CommonLogger
 
+# setup ruby enterprise path
+ENV['PATH'] = "#{ENV['PATH']}:/opt/ruby-enterprise/bin"
+
+log = File.new("/var/www/ci/projects/chromaroma/site.log", "a+")
+$stdout.reopen(log)
+$stderr.reopen(log)
+
+#puts `echo $PATH`
+#puts `whoami`
+
 # configure joe
 CIJoe::Server.configure do |config|
   config.set :project_path, "/var/www/ci/projects/<%= @project_name %>/app"

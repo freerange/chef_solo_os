@@ -15,6 +15,10 @@ execute "clone the repository into require project location" do
   command "git clone #{git_url} #{ci_path}/projects/#{project_name}/app"
 end
 
+execute "touch a file for the log" do
+  command "touch #{ci_path}/projects/#{project_name}/site.log"
+end
+
 execute "update permissions so CI can run the build" do
   command "chown -R deploy:www-data #{ci_path}/projects/#{project_name}/app"
 end
