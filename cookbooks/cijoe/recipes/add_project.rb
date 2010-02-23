@@ -53,6 +53,13 @@ execute "add sym link to ci public folder" do
   command "ln -s #{ci_path}/projects/#{project_name}/public #{ci_path}/#{project_name}"
 end
 
+# add it to the listing
+execute "Adding project to the root listing" do
+  listing = File.join(ci_path, 'index.html')
+  link = %{<a href="/#{project_name}">#{project_name}</a>}
+  command %[ruby -e 'a=File.read("#{listing}");a.insert(a.index("</ul>"),%{<li>#{link}</li>});File.open("#{listing}", "w"){|f|f.write(a)}']
+end
+
 # reload apache2 config
 execute "Restart Apache2" do
   command "/etc/init.d/apache2 reload"
