@@ -33,6 +33,9 @@ Then to add an application you can run this rake task from the same directory.
 
   sudo rake ci:add_project GIT_URL="git@github.com:user/example_project.git" PROJECT_NAME=example_project
   
-Once an application is added you will be able to access it via:
+This task will create a new directory in /var/www/ci/projects named after PROJECT_NAME. This folder will contain app which is the git clone and configuration files and folders for it to run as CI Joe rack application.
+There will also be a symlink with the PROJECT_NAME in /var/www/ci that is used for passenger.
+If the application requires a database connection or other configuration go to /var/www/ci/projects/#{PROJECT_NAME}/app and you'll find the application.
+Once all done, you can visit the application at this url.
 
   http://#{HOSTNAME}/example_project
