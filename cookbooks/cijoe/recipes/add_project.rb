@@ -21,8 +21,6 @@ end
 ["#{ci_path}/#{project_name}/public", "#{ci_path}/projects/#{project_name}/tmp"].each do |dir|
   directory dir do
     action :create
-    owner "www-data"
-    group "www-data"
   end
 end
 
@@ -45,8 +43,6 @@ end
 # add symbolic link for Rack/Passenger to see public folder
 execute "add sym link to ci public folder" do
   command "ln -s #{ci_path}/projects/#{project_name}/public #{project_name}"
-  user "www-data"
-  group "www-data"
 end
 
 # reload apache2 config
