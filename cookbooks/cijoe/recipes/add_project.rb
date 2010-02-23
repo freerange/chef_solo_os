@@ -15,6 +15,10 @@ execute "clone the repository into require project location" do
   command "git clone #{git_url} #{ci_path}/projects/#{project_name}/app"
 end
 
+execute "update permissions so CI can run the build" do
+  command "chown -R www-data: #{ci_path}/projects/#{project_name}/app"
+end
+
 # setup potentially required passenger directories
 ["#{ci_path}/projects/#{project_name}/public", "#{ci_path}/projects/#{project_name}/tmp"].each do |dir|
   directory dir do
