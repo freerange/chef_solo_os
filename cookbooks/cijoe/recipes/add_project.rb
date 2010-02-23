@@ -13,7 +13,7 @@ ci_path = node[:ci][:path]
 # clone the GIT repos into required location
 execute "clone the repository into require project location" do
   command "git clone #{git_url} #{ci_path}/projects/#{project_name}/app"
-  owner "deploy"
+  user "deploy"
   group "www-data"
 end
 
@@ -45,7 +45,7 @@ end
 # add symbolic link for Rack/Passenger to see public folder
 execute "add sym link to ci public folder" do
   command "ln -s #{ci_path}/projects/#{project_name}/public #{project_name}"
-  owner "deploy"
+  user "deploy"
   group "www-data"
 end
 
