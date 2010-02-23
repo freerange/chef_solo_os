@@ -42,7 +42,7 @@ end
 
 # add symbolic link for Rack/Passenger to see public folder
 execute "add sym link to ci public folder" do
-  command "ln -s #{ci_path}/projects/#{project_name}/public #{project_name}"
+  command "ln -s #{ci_path}/projects/#{project_name}/public #{ci_path}/#{project_name}"
 end
 
 # reload apache2 config
