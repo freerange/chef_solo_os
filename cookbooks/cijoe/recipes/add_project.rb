@@ -13,7 +13,7 @@ ci_path = node[:ci][:path]
 # clone the GIT repos into required location
 execute "clone the repository into require project location" do
   command "git clone #{git_url} #{ci_path}/projects/#{project_name}/app"
-  user "deploy"
+  user "www-data"
   group "www-data"
 end
 
@@ -21,7 +21,7 @@ end
 ["#{ci_path}/#{project_name}/public", "#{ci_path}/projects/#{project_name}/tmp"].each do |dir|
   directory dir do
     action :create
-    owner "deploy"
+    owner "www-data"
     group "www-data"
   end
 end
@@ -30,7 +30,7 @@ end
 template "#{ci_path}/projects/#{project_name}/config.ru" do
   source "config.ru.erb"
   variables(:project_name => project_name)
-  owner "deploy"
+  owner "www-data"
   group "www-data"
 end
 
@@ -38,14 +38,14 @@ end
 template "#{ci_path}/vhosts/#{project_name}" do
   source "app.vhost.erb"
   variables(:project_name => project_name, :ci_path => ci_path)
-  owner "deploy"
+  owner "www-data"
   group "www-data"
 end
 
 # add symbolic link for Rack/Passenger to see public folder
 execute "add sym link to ci public folder" do
   command "ln -s #{ci_path}/projects/#{project_name}/public #{project_name}"
-  user "deploy"
+  user "www-data"
   group "www-data"
 end
 
