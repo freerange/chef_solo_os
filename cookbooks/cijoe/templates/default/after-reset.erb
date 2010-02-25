@@ -5,4 +5,4 @@ if [ -f Gemfile ]; then
   bundle install
 fi
 
-rake db:migrate
+rake db:create:all db:migrate

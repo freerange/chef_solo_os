@@ -21,7 +21,7 @@ execute "touch a file for the log" do
 end
 
 execute "update permissions so CI can run the build" do
-  command "chown -R deploy:www-data #{project_path}/app"
+  command "chown -R deploy:www-data #{project_path}"
 end
 
 # setup potentially required passenger directories
@@ -64,13 +64,10 @@ end
 
 # Add the basic hook
 template "#{project_path}/app/.git/hooks/after-reset" do
-  source "after-reset"
+  source "after-reset.erb"
   owner "deploy"
   group "www-data"
-end
-
-execute "Creating databases" do
-  command "cd #{project_path}/app && rake db:create:all"
+  mode 0777
 end
 
 # add it to the listing
