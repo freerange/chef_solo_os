@@ -69,3 +69,14 @@ template "#{ci_path}/index.html" do
   group "www-data"
   action :create
 end
+
+# setup default projects page
+template "#{ci_path}/projects.html" do
+  source "projects.html.erb"
+  variables(
+    :hostname => hostname
+  )
+  owner "www-data"
+  group "www-data"
+  action :create
+end

@@ -72,8 +72,8 @@ end
 
 # add it to the listing
 execute "Adding project to the root listing" do
-  listing = File.join(ci_path, 'index.html')
-  link = %{<a href="/#{project_name}">#{project_name}</a>}
+  listing = File.join(ci_path, 'projects.html')
+  link = %{<a href="/#{project_name}" target="ci">#{project_name}</a>}
   command %[ruby -e 'a=File.read("#{listing}");a.insert(a.index("</ul>"),%{<li>#{link}</li>});File.open("#{listing}", "w"){|f|f.write(a)}']
 end
 
