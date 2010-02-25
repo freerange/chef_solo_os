@@ -7,24 +7,25 @@
 # This cookbook adds a site
 
 git_url = ENV["GIT_URL"]
-project_name = ENV["PROJECT_NAME"]
+project_name = File.basename(git_url.split("/").last, ".git")
 ci_path = node[:ci][:path]
+project_path = "#{project_path}"
 
 # clone the GIT repos into required location
 execute "clone the repository into require project location" do
-  command "git clone #{git_url} #{ci_path}/projects/#{project_name}/app"
+  command "git clone #{git_url} #{project_path}/app"
 end
 
 execute "touch a file for the log" do
-  command "touch #{ci_path}/projects/#{project_name}/site.log"
+  command "touch #{project_path}/site.log"
 end
 
 execute "update permissions so CI can run the build" do
-  command "chown -R deploy:www-data #{ci_path}/projects/#{project_name}/app"
+  command "chown -R deploy:www-data #{project_path}/app"
 end
 
 # setup potentially required passenger directories
-["#{ci_path}/projects/#{project_name}/public", "#{ci_path}/projects/#{project_name}/tmp"].each do |dir|
+["#{project_path}/public", "#{project_path}/tmp"].each do |dir|
   directory dir do
     action :create
     owner "deploy"
@@ -33,9 +34,9 @@ end
 end
 
 # set up config.ru
-template "#{ci_path}/projects/#{project_name}/config.ru" do
+template "#{project_path}/config.ru" do
   source "config.ru.erb"
-  variables(:project_name => project_name)
+  variables(:project_path => project_path)
   owner "deploy"
   group "www-data"
 end
@@ -50,7 +51,26 @@ end
 
 # add symbolic link for Rack/Passenger to see public folder
 execute "add sym link to ci public folder" do
-  command "ln -s #{ci_path}/projects/#{project_name}/public #{ci_path}/#{project_name}"
+  command "ln -s #{project_path}/public #{ci_path}/#{project_name}"
+end
+
+# create the database.yml file
+template "#{project_path}/ci_database.yml" do
+  source "ci_database.yml.erb"
+  variables(:project_name => project_name)
+  owner "deploy"
+  group "www-data"
+end
+
+# Add the basic hook
+template "#{project_path}/app/.git/hooks/after-reset" do
+  source "after-reset"
+  owner "deploy"
+  group "www-data"
+end
+
+execute "Creating databases" do
+  command "cd #{project_path}/app && rake db:create:all"
 end
 
 # add it to the listing

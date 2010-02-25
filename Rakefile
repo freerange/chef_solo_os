@@ -27,10 +27,10 @@ namespace :ci do
   
   desc "Add CI project"
   task :add_project => :check_solo_setup do
-    unless ENV["GIT_URL"] && ENV["PROJECT_NAME"]
-      puts "Please supply GIT_URL=xxx and PROJECT_NAME=xxx for the project you would like to set up"
+    unless ENV["GIT_URL"]
+      puts "Please supply GIT_URL=xxx for the project you would like to set up"
     end
-    puts "Adding #{ENV["GIT_URL"]} as #{ENV["PROJECT_NAME"]}"
+    puts "Adding #{ENV["GIT_URL"]}"
     sh "chef-solo -l debug -c config/solo.rb -j config/ci/add_project.json"
   end
 end

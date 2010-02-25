@@ -1,0 +1,13 @@
+base: &base
+  adapter: mysql
+  host: localhost
+  username: ci
+  password: l3tm31n
+
+development: 
+  database: <%= @project_name.gsub(/[-\s]_/, '_') %>_development
+  <<: *base
+
+test:
+  database: <%= @project_name.gsub(/[-\s]_/, '_') %>_test
+  <<: *base

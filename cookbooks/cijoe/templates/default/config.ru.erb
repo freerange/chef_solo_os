@@ -7,7 +7,7 @@ use Rack::CommonLogger
 # setup ruby enterprise path
 ENV['PATH'] = "#{ENV['PATH']}:/opt/ruby-enterprise/bin"
 
-log = File.new("/var/www/ci/projects/chromaroma/site.log", "a+")
+log = File.new("<%= @project_path %>/site.log", "a+")
 $stdout.reopen(log)
 $stderr.reopen(log)
 
@@ -16,7 +16,7 @@ $stderr.reopen(log)
 
 # configure joe
 CIJoe::Server.configure do |config|
-  config.set :project_path, "/var/www/ci/projects/<%= @project_name %>/app"
+  config.set :project_path, "<%= @project_path %>/app"
   config.set :show_exceptions, true
   config.set :lock, true
 end

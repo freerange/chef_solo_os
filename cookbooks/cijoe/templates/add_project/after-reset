@@ -1,0 +1,8 @@
+rm config/database.yml
+cp ../ci_database.yml config/database.yml
+
+if [ -f Gemfile ]; then
+  bundle install
+fi
+
+rake db:migrate
