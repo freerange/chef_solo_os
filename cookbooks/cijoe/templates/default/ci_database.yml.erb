@@ -4,10 +4,16 @@ base: &base
   username: root
   password: ch4n63m3
 
+<%- db_name = @project_name.gsub(/[-\s]/, '_') -%>
+
 development: 
-  database: <%= @project_name.gsub(/[-\s]_/, '_') %>_development
+  database: <%= db_name %>_development
+  <<: *base
+
+production: 
+  database: <%= db_name %>_ci_production
   <<: *base
 
 test:
-  database: <%= @project_name.gsub(/[-\s]_/, '_') %>_test
+  database: <%= db_name %>_test
   <<: *base
