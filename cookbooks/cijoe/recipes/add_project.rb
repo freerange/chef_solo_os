@@ -9,7 +9,7 @@
 git_url = ENV["GIT_URL"]
 project_name = File.basename(git_url.split("/").last, ".git")
 ci_path = node[:ci][:path]
-project_path = "#{project_path}"
+project_path = "#{ci_path}/projects/#{project_name}"
 
 # clone the GIT repos into required location
 execute "clone the repository into require project location" do
