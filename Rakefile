@@ -1,6 +1,9 @@
 require 'rubygems'
 require 'chef'
 
+# The top of the repository checkout
+TOPDIR = File.expand_path(File.dirname(__FILE__))
+
 load 'chef/tasks/chef_repo.rake'
 
 task :default => :test
