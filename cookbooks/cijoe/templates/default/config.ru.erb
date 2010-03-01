@@ -21,4 +21,7 @@ CIJoe::Server.configure do |config|
   config.set :lock, true
 end
 
+# workaround for bug in cijoe 0.3
+$project_path = "<%= @project_path %>/app"
+
 run CIJoe::Server
