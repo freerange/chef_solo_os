@@ -22,6 +22,9 @@ Debian 32 and 64-bit
   wget -q -O - http://github.com/freerange/chef_solo_os/raw/master/build.sh | sh
   
   
+== SSH Keys
+This setup creates a user deploy. You will have to manually add authorized keys, private keys for github, etc.
+
 == Setting up server as CI
 To set up the server as a CI server, run the following rake on the server. This will run the required chef recipes and apache setup.
 
