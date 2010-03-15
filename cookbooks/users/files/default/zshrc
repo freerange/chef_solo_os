@@ -6,7 +6,7 @@ export PS2='> '
 
 umask 022
 
-alias sudo='sudo env PATH=$PATH'
+#alias sudo='sudo env PATH=$PATH'
 
 bindkey -e
 
