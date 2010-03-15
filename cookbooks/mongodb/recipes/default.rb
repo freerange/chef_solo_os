@@ -3,7 +3,7 @@
 
 kernel = `uname -a`
 package_tgz = case kernel
-when kernel[/x86_64/] # 64 bit
+when /x86_64/ # 64 bit
   'mongodb-linux-x86_64-1.2.4.tgz'
 else # 32 bit
   'mongodb-linux-i686-1.2.4.tgz'
@@ -11,23 +11,31 @@ end
 package_folder = package_tgz.gsub('.tgz', '')
 
 directory "/db/mongodb/master" do
+  owner "root"
+  group "root"
   mode 0755
   recursive true
   not_if { File.directory?('/db/mongodb/master') }
 end
 
 directory "/var/log/mongodb" do
+  owner "root"
+  group "root"
   mode 0755
   not_if { File.directory?('/db/mongodb/master') }
 end
 
 directory "/db/mongodb/slave" do
+  owner "root"
+  group "root"
   mode 0755
   recursive true
   not_if { File.directory?('/db/mongodb/slave') }
 end
 
 execute "install-mongodb" do
+  owner "root"
+  group "root"
   command %Q{
     curl -O http://downloads.mongodb.org/linux/#{package_tgz} &&
     tar zxvf #{package_tgz} &&
