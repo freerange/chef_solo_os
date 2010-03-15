@@ -11,6 +11,6 @@ end
 bash "Install libshadow-ruby for REE" do
   cwd "/usr/local/src/"
   code "tar zxf ruby-shadow-1.4.1.tar.gz"
-  cwd "/usr/local/shadow-1.4.1"
+  cwd "/usr/local/src/shadow-1.4.1"
   code "/opt/ruby-enterprise/bin/ruby extconf.rb; make; make install"
 end
