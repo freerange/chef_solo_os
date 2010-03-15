@@ -50,7 +50,7 @@ end
 
 execute "correct permissions" do
   cwd "/usr/local"
-  code "chown -R root: mongodb"
+  command "chown -R root: mongodb"
 end
 
 execute "add-to-path" do
