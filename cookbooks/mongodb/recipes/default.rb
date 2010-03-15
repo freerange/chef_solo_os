@@ -33,11 +33,14 @@ directory "/db/mongodb/slave" do
   not_if { File.directory?('/db/mongodb/slave') }
 end
 
+remote_file "/tmp/#{package_tgz}" do
+  source "http://downloads.mongodb.org/linux/#{package_tgz}"
+  not_if { File.exists?("/tmp/#{package_tgz}") }
+end
+
 execute "install-mongodb" do
-  user "root"
-  group "root"
+  cwd "/tmp"
   command %Q{
-    curl -O http://downloads.mongodb.org/linux/#{package_tgz} &&
     tar zxvf #{package_tgz} &&
     mv #{package_folder} /usr/local/mongodb &&
     rm #{package_tgz}
@@ -57,13 +60,14 @@ remote_file "/etc/init.d/mongodb" do
   owner "root"
   group "root"
   mode 0775
+  not_if { File.exists?("/etc/init.d/mongodb") }
 end
 
 execute "add-mongodb-to-default-run-level" do
   command %Q{
     update-rc.d mongodb defaults 99
   }
-  not_if "rc-status | grep mongodb"
+  not_if { File.exists?("/etc/rc5.d/S99mongodb") } # not brilliant but will do
 end
 
 execute "ensure-mongodb-is-running" do
