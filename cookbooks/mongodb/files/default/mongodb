@@ -1,4 +1,4 @@
-#!/sbin/runscript
+#!/bin/sh -e
 
 depend() {
   use net

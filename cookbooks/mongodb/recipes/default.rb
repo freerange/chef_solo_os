@@ -54,7 +54,7 @@ remote_file "/etc/init.d/mongodb" do
   source "mongodb"
   owner "root"
   group "root"
-  mode 0755
+  mode 0775
 end
 
 execute "add-mongodb-to-default-run-level" do
