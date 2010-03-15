@@ -34,7 +34,7 @@ directory "/db/mongodb/slave" do
 end
 
 execute "install-mongodb" do
-  owner "root"
+  user "root"
   group "root"
   command %Q{
     curl -O http://downloads.mongodb.org/linux/#{package_tgz} &&
