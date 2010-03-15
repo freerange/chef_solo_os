@@ -7,7 +7,7 @@ case "$1" in
     #/usr/local/mongodb/bin/mongod --slave --source localhost --port 27018 --dbpath /db/mongodb/slave/ --logpath /var/log/mongodb.log --logappend --fork --smallfiles
   
     # Start up single instance
-    /usr/local/mongodb/bin/mongod --port 27017 --dbpath /db/mongodb/master/ --logpath /var/log/mongodb/mongodb.log --logappend --fork --smallfiles
+    /usr/local/mongodb/bin/mongod --port 27017 --dbpath /db/mongodb/master/ --logpath /var/log/mongodb.log --logappend --fork --smallfiles
   ;;
 
   stop)
