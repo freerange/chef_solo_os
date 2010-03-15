@@ -15,12 +15,18 @@ end
 
 desc "Check that solo is setup and configured correctly"
 task :check_solo_setup do
-  # TODO: need to check first... As the initial install script was ran from Ruby 1.8 std and now server is configure with REE.
   `gem install ohai chef json`
 end
 
+namespace :mongodb do
+  desc "Setup mongodb on this server"
+  task :setup do
+    puts "Setting up server with Mongodb"
+    sh "chef-solo -l info -c config/solo.rb -j config/mongodb.json"
+  end
+end
+
 namespace :ci do
-  
   desc "Run a custom chef-solo cookbook"
   task :setup => :check_solo_setup do
     puts "Please supply HOSTNAME=xxx for the hostname that this will be" unless ENV["HOSTNAME"]
