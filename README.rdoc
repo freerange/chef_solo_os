@@ -29,7 +29,7 @@ This setup creates a user deploy. You will have to manually add authorized keys,
 To set up the server as a CI server, run the following rake on the server. This will run the required chef recipes and apache setup.
 
   cd /opt/chef_solo_os
-  sudo git pull (just in case updates have been since last checkout)
+  sudo git pull (just in case updates have been made)
   
   sudo rake ci:setup HOSTNAME="ci.mycompany.com"
   
@@ -43,3 +43,11 @@ If the application requires a database connection or other configuration go to /
 Once all done, you can visit the application at this url.
 
   http://#{HOSTNAME}/example_project
+  
+== Setting up Mongodb on server
+To install Mongodb on the server do the below.
+
+    cd /opt/chef_solo_os
+    sudo git pull (just in case updates have been made)
+    
+    sudo rake mongodb:setup

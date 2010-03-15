@@ -22,7 +22,7 @@ namespace :mongodb do
   desc "Setup mongodb on this server"
   task :setup do
     puts "Setting up server with Mongodb"
-    sh "chef-solo -l info -c config/solo.rb -j config/mongodb.json"
+    sh "chef-solo -l debug -c config/solo.rb -j config/mongodb.json"
   end
 end
 

@@ -59,7 +59,7 @@ end
 
 execute "add-mongodb-to-default-run-level" do
   command %Q{
-    rc-update add mongodb default
+    update-rc.d mongodb defaults 99
   }
   not_if "rc-status | grep mongodb"
 end
