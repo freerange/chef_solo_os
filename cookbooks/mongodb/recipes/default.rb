@@ -66,7 +66,7 @@ end
 
 execute "ensure-mongodb-is-running" do
   command %Q{
-    /etc/init.d/mongodb start
+    sudo /etc/init.d/mongodb start
   }
   not_if "pgrep mongod"
 end
