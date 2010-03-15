@@ -48,7 +48,7 @@ if [ -f "/etc/lsb-release" ]; then
   gem install ohai chef json rake
 
   ### Run chef solo.
-  git clone git://github.com/freerange/chef_solo_os.git && cd chef_solo_os || exit 1
+  git clone git://github.com/freerange/chef_solo_os.git /opt/chef_solo_os && cd /opt/chef_solo_os || exit 1
   rake solo
 
   ### Add Ruby Enterprise to root path

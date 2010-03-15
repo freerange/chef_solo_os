@@ -28,7 +28,8 @@ This setup creates a user deploy. You will have to manually add authorized keys,
 == Setting up server as CI
 To set up the server as a CI server, run the following rake on the server. This will run the required chef recipes and apache setup.
 
-  cd /tmp/chef_solo_os
+  cd /opt/chef_solo_os
+  sudo git pull (just in case updates have been since last checkout)
   
   sudo rake ci:setup HOSTNAME="ci.mycompany.com"
   
