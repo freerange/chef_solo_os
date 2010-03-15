@@ -11,23 +11,17 @@ end
 package_folder = package_tgz.gsub('.tgz', '')
 
 directory "/db/mongodb/master" do
-  owner node[:owner_name]
-  group node[:owner_name]
   mode 0755
   recursive true
   not_if { File.directory?('/db/mongodb/master') }
 end
 
 directory "/var/log/mongodb" do
-  owner node[:owner_name]
-  group node[:owner_name]
   mode 0755
   not_if { File.directory?('/db/mongodb/master') }
 end
 
 directory "/db/mongodb/slave" do
-  owner node[:owner_name]
-  group node[:owner_name]
   mode 0755
   recursive true
   not_if { File.directory?('/db/mongodb/slave') }
