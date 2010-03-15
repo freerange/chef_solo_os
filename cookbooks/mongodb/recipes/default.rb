@@ -48,6 +48,11 @@ execute "install-mongodb" do
   not_if { File.directory?('/usr/local/mongodb') }
 end
 
+execute "correct permissions" do
+  cwd "/usr/local"
+  code "chown -R root: mongodb"
+end
+
 execute "add-to-path" do
   command %Q{
     echo 'export PATH=$PATH:/usr/local/mongodb/bin' >> /etc/profile

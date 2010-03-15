@@ -1,20 +1,15 @@
 #!/bin/sh -e
-
-depend() {
-  use net
-}
-
 start() {
-  ebegin "Starting mongodb"
+  echo "Starting mongodb"
   # Use this method for master/slave
   #/usr/local/mongodb/bin/mongod --master --port 27017 --dbpath /db/mongodb/master/ --logpath /var/log/mongodb.log --logappend --fork --smallfiles
   #/usr/local/mongodb/bin/mongod --slave --source localhost --port 27018 --dbpath /db/mongodb/slave/ --logpath /var/log/mongodb.log --logappend --fork --smallfiles
+  
+  # Start up single instance
   /usr/local/mongodb/bin/mongod --port 27017 --dbpath /db/mongodb/master/ --logpath /var/log/mongodb.log --logappend --fork --smallfiles
-  eend $?
 }
 
 stop() {
-  ebegin "Stopping mongodb"
+  echo "Stopping mongodb"
   start-stop-daemon --stop --quiet --exec /usr/local/mongodb/bin/mongod
-  eend $?
 }
