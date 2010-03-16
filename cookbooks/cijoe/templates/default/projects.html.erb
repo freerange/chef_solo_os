@@ -1,4 +1,37 @@
 <html>
+<script src="http://www.google.com/jsapi"></script>
+  <script>
+    google.load("jquery", "1.4.2");
+
+    function getCIStatus() { 
+      $("ul#projects li a").each(function(index, link) {
+        $.get($(link).attr('href'), {}, function(page) {
+          if ($(page).find("ul.posts li").text().match("worked")) {
+            $(link).addClass("worked");
+          } else {
+            $(link).addClass("failed");
+          }
+        });
+      });
+    }
+
+    function periodicallyUpdateCIStatus() {
+      getCIStatus();
+      setInterval(getCIStatus, 2000);
+    }
+
+    google.setOnLoadCallback(periodicallyUpdateCIStatus);
+  </script>
+  <style>
+    .worked {
+      color: green;
+    }
+    .failed {
+      font-weight: bold;
+      color: red;
+    }
+  </style>
+</head>
 <body>
   <h1>Welcome to <%= @hostname %> CI server</h1>
   <ul id="projects"><li><a href="/tellyougov" target="ci">tellyougov</a></li></ul>
