@@ -53,5 +53,5 @@
   },
   "apache": {"contact": "lets@gofreerange.com"},
   "mysql": {"server_root_password": "ch4n63m3"},
-  "recipes":["packages", "ntp", "sshd", "iptables", "openssl", "sudo", "zsh", "users", "deploy", "mysql::server", "passenger_enterprise::apache2", "apache2::mod_ssl", "deploy::post_setup"]
+  "recipes":["packages", "ntp", "sshd", "iptables", "openssl", "sudo", "zsh", "users", "mysql::server", "passenger_enterprise::apache2", "apache2::mod_ssl", "deploy"]
 }
