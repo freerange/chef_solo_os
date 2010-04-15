@@ -52,7 +52,7 @@
     }
   },
   "deploy": {
-    "apache_vhost_directory":"/var/www/apache_vhosts"
+    "apache_vhost_directory":"/etc/apache2/sites-available"
   },
   "apache": {"contact": "lets@gofreerange.com"},
   "mysql": {"server_root_password": "ch4n63m3"},
